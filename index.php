@@ -1,18 +1,18 @@
 <?php
-$name= "user";
-echo ("Hello, $name! <br>");
+header('Content-Type: text/html;charset=UTF-8');
 
-define('MY_COST', 100);
-echo MY_COST;
-echo $name;
 
-$int10 = 42;
-$int2 = 0b101010;
-$int8 = 52;
-$int16 = 0x2A;
 
-echo "Десятеричная система $int10 <br>";
-echo "Двоичная система $int2 <br>";
-echo "Восьмеричная система $int8 <br>";
-echo "Шеснатцатиричная система $int16 <br>";
+$a = 5;
+$b = '05';
+var_dump($a == $b);         // Почему true?  приводит их к одному типу данных, а затем сравнивает
+var_dump((int)'012345');     // Почему 12345?
+var_dump((float)123.0 === (int)123.0); // Почему false?Думаю, сравнивать не должен
+var_dump((int)0 === (int)'hello, world'); // Почему true? Думаю, что оба значения в чилхах приведены к нулю, хотя сравнивать не должен тождественное равенство
+
+$titile = 'Titele 1';
+$content = 'HW';
 ?>
+
+<h1><?php echo $titile?></h1>
+<p><?= $content?></p>
