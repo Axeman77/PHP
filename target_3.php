@@ -49,6 +49,7 @@ foreach ($cityRegion as $key => $value)
     echo ( "<br/> $key : $value " );
 }
 
+
 var_dump( $cityRegion );
 
 
