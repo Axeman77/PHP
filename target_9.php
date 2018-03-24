@@ -1,5 +1,5 @@
 <meta charset="utf-8">
-<title>HW3_5</title>
+<title>HW3_9</title>
 
 <ul>
     <li><a href="index.php">Задание №1</a></li>
@@ -15,9 +15,11 @@
 
 <?php
 
-$str = 'Карл у Кралы украл корралы';
+function repl ($str) {
+    $text = [" " => "_"];
 
-
-echo str_replace(" ","_", $str);
+    return strtr($str, $text);
+}
+echo repl("привет мир !");
 
 ?>
