@@ -1,5 +1,5 @@
 <meta charset="utf-8">
-<title>HW3_1</title>
+<title>HW3_3</title>
 
 <ul>
   <li><a href="index.php">Задание №1</a></li>
@@ -15,13 +15,9 @@
 
 <?php
 
-//задание №1
 
-while ( $i <= 100 ) {
-  if ( $i % 3 == 0 ) {
-    echo  "$i <br>";
-    }
-  $i++;
-}
+// Задание № 4
+
+
 
 ?>
