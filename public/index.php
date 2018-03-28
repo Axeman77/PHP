@@ -5,18 +5,17 @@ require_once ENGINE_DIR . "/render.php";
 include_once TEMPLATES_DIR . "/upload_form.php";
 
 
-
-$dir = opendir("img");
-while ($file = readdir($dir)){
-    if(is_dir($file)){
-        echo "<strong>$file</strong><br>";
-    } else {
-        echo "$file<br>";
+$dir = opendir('img/'); // Папка с изображениями
+readdir($dir); // читаем содержимое директории
+while ( $file = readdir ($dir)){
+    if (($file != ".") && ($file != "..")) {
+        $files[] = $file;
     }
-};
-closedir($dir);
+}
+closedir ($dir);
 
+//Подготовили данные, теперь надо переддатть их в шаблон. Самый простой вариант - сделать include:
 
+include_once TEMPLATES_DIR . "/gallery.php";
 
 ?>
-
