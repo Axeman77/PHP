@@ -6,7 +6,7 @@ include_once TEMPLATES_DIR . "/upload_form.php";
 
 
 $dir = opendir('img/'); // Папка с изображениями
-readdir($dir); // читаем содержимое директории
+readdir($dir); // читаем содержимое директории (считывает имя файла)
 while ( $file = readdir ($dir)){
     if (($file != ".") && ($file != "..")) {
         $files[] = "../img/" . $file;
