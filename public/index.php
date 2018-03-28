@@ -9,7 +9,7 @@ $dir = opendir('img/'); // Папка с изображениями
 readdir($dir); // читаем содержимое директории
 while ( $file = readdir ($dir)){
     if (($file != ".") && ($file != "..")) {
-        $files[] = $file;
+        $files[] = "../img/" . $file;
     }
 }
 closedir ($dir);
