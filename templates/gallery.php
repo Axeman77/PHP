@@ -1,8 +1,8 @@
 <div class = gallery>
-    <?php foreach ($files as $image): ?>
+    <?php foreach ($files as $file): ?>
     <div>
-        <a href="<?=$image?>" target="_blank">
-            <img alt='' width='100' src="<?=$image?>">
+        <a href="<?=$file?>" target="_blank">
+            <img alt='' width='100' src="<?=$file?>">
         </a>
     </div>
 <?php endforeach; ?>

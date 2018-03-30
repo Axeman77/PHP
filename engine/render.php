@@ -3,6 +3,16 @@ function displayHello () {
     echo "Hello, World!";
 };
 
+function getGallery () {
+    return array_filter(
+        scandir(PUBLIC_DIR . "/img"),
+        function($item){return !in_array($item,[".",".."]);}
+    );
+};
+
+
+
+// read
 function listFolderFiles($dir){ // $dir - папка с файлами
     $list = scandir($dir); // получаем список файлов указанной директории
     echo '<ol>'; // открываем нумерованный список
@@ -17,7 +27,7 @@ function listFolderFiles($dir){ // $dir - папка с файлами
     }
     echo '</ol>'; // закрываем тег
 }
-
+// delete
 function removeDirectory($dir) {
     if ( $objs = glob($dir . "/*" )) { // если в папке есть вложенные папки, помещаем в переменную все директории
         foreach( $objs as $k ) { // для каждого элемента массива директорий
