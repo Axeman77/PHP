@@ -1,4 +1,8 @@
 <?php
+
+header('Content-Type:text/html; charset=utf-8;');
+include_once $_SERVER['DOCUMENT_ROOT'] . "/../config/main.php";
+
 function displayHello () {
     echo "Hello, World!";
 };
@@ -35,4 +39,20 @@ function removeDirectory($dir) {
         }
     }
     rmdir($dir); // если в папке только файлы то сразу их удаляем
+}
+
+function render ($template, $params = [], $useLayout = true) {
+    $content = renderTemplate($template, $params);
+    if ($useLayout) {
+        $content = renderTemplate('layouts/layout', ['content' => $content]);
+    }
+    return $content;
+}
+
+
+function renderTemplate ($template, $params = []) {
+    ob_start();
+    extract($params);
+    include TEMPLATES_DIR . "/{$template}.php";
+    return ob_get_clean();
 }
