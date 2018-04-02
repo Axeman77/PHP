@@ -19,5 +19,5 @@ function uploadImg (){
         img_resize($dir . $fileName, $dir . "/small/{$fileName}",200, 150);
         execute("INSERT INTO images (name, path)
                 VALUES ('{$fileName}', '{$fileName}')");
-    });
+        });
 }

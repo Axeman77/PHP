@@ -13,5 +13,5 @@ echo render ( 'gallery', ['images' => $files] );
 
 ?>
 
-<a href="/photo.php?id=1">photo</a>
+
 
