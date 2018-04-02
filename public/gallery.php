@@ -5,16 +5,11 @@ require_once ENGINE_DIR . "/render.php";
 require_once ENGINE_DIR . "/uploads.php";
 
 if($_SERVER['REQUEST_METHOD'] == "POST") {
-    if (isset($_FILES['file'])) {
-        $tmp = $_FILES['file']['tmp_name'];
-        $filePaht = PUBLIC_DIR . "/img/" . $_FILES['file']['name'];
-        move_uploaded_file($tmp, $filePaht);
-    }
+   uploadImg();
 }
 
 $files = getGallery();
-
-echo render ( 'gallery', ['files' => $files] );
+echo render ( 'gallery', ['images' => $files] );
 
 ?>
 

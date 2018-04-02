@@ -1,14 +1,14 @@
 <div class = gallery>
-    <?php foreach ($files as $file): ?>
+    <?php foreach ($images as $image):?>
         <div>
-            <a href="/img/<?=$file?>" target="_blank">
-                <img alt='' width='100' src="/img/<?=$file?>">
-            </a>
+            <a href="/photo.php?id=<?=$image['id']?>">
+            <img width="200" src="/img/small/<?=$image['path']?>" alt="">
+          </a>
         </div>
     <?php endforeach; ?>
 </div>
 
 <form action="" enctype="multipart/form-data" method="post">
-    <input type="file" name = 'file'>
-    <input type="submit">
+    <input type="file" name = 'photo'/>
+    <input type="submit"/>
 </form>
