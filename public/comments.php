@@ -19,9 +19,4 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     <input name="" value="Send" type="submit"/>
 </form>
 
-<form action="" method="post">
-  <input name='operation' value="+" type="submit"/>
-  <input name='operation' value="-" type="submit"/>
-  <input name='operation' value="*" type="submit"/>
-  <input name='operation' value="/" type="submit"/>
-</form>
+
