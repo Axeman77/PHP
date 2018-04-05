@@ -1,6 +1,10 @@
 <?php
 require_once ENGINE_DIR . "/db.php";
 
+//render Product
+function getProduct(){
+    return queryAll("SELECT * FROM products");
+}
 
 //render Gallery
 function getGallery(){
