@@ -1,9 +1,11 @@
 <?php
-
 function getConnection(){
     static $conn = null;
     if(!$conn){
-        $conn = mysqli_connect("localhost", "root", "", 'fire');
+        $config = include CONFIG_DIR . "/db.php";
+        $conn = mysqli_connect(
+            $config["host"], $config["login"], $config["password"], $config['database']
+        );
     }
     return $conn;
 }

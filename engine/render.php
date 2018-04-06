@@ -1,11 +1,6 @@
 <?php
 require_once ENGINE_DIR . "/db.php";
 
-//render Product
-function getProduct(){
-    return queryAll("SELECT * FROM products");
-}
-
 //render Gallery
 function getGallery(){
     return queryAll("SELECT * FROM images ORDER BY `count` DESC");
