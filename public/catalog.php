@@ -10,10 +10,6 @@ if(!isset($_SESSION['login'])) {
     echo "Пошел вон!";
     exit;
 }
-/*session_start();
-if(!isset($_SESSION['login'])){
-    echo "Пошел вон!"; exit;
-}*/
 
 $products = getAllProducts();
 echo render('catalog', ['products' => $products]);

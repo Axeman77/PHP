@@ -11,8 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
    if($user = getUserByLoginPass($login, $pass)){
        /*setcookie("login", "1");*/
        session_start();
-       $_SESSION['login'] = true;
-       header("Location: /catalog.php");
+//       $_SESSION['login'] = true;
+       header("Location: /lk.php");
        exit;
    }
    $message =  "Неправильный логин-пароль!";
