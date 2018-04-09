@@ -1,6 +1,3 @@
-<style type="text/css">
-  <?php include PUBLIC_DIR .  "/css/style.css" ?>
-</style>
 <div class = gallery>
     <?php foreach ($products as $product):?>
       <div>

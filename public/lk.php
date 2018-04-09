@@ -1,5 +1,4 @@
 <?php
-session_start();
 header('Content-Type: text/html;charset=utf-8');
 include_once $_SERVER['DOCUMENT_ROOT'] . "/../config/main.php";
 require_once ENGINE_DIR . "/render.php";
@@ -7,15 +6,12 @@ require_once ENGINE_DIR . "/db.php";
 require_once ENGINE_DIR . "/user.php";
 
 
-
-if (isset($_SESSION['login'])) {
-    $id = $_SESSION['login'];
-    var_dump($_SESSION['login']);
-    $data = queryAll("SELECT login, name FROM users WHERE id = '{$id}'");
-    var_dump($data);
-    include TEMPLATES_DIR . '/lk.php';
-} else {
-    header('location: /index.php');
+session_start();
+if(!isset($_SESSION['user_id']) || empty($_SESSION['user_id'])){
+    header("Location: /login.php");
+    exit;
 }
 
-?>
+$userId = $_SESSION['user_id'];
+$user = getUserById($userId);
+echo render("lk", ['user' => $user]);

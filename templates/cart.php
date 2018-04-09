@@ -1,12 +1,18 @@
-<div class="product-item">
-    <form method="post" action="card.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
-        <div class="product-image"><img src="<?="/images/{$product['path']}"?>" alt="img"></div>
-        <div>
-            <strong><?php echo $product["name"]; ?></strong>
-        </div>
-        <div class="product-price"><?php echo $product["price"] . "$" ?></div>
-        <div><input type="text" name="quantity" value="1" size="2" />
-            <input type="submit" value="Add to cart" class="btnAddAction" />
-        </div>
-    </form>
-</div>
+<div class = cart>
+    <h1>Корзина товаров:</h1>
+      <?php if(empty($cart)):?>
+        <div>Корзина пуста!</div>
+      <?php else:?>
+          <?php foreach ($cart as $item):?>
+          <div>
+            Наименование: <?=$item['name']?>;<br>
+            Количество:  <?=$item['count']?>
+             <?$item['name']?><br>
+            <img width="200" src="/images/<?=$item['path']?>" alt="img"><br>
+            Описание: <?=$item['txt']?> <br>
+            Цена: <?=$item['price']?> $<br>
+            <a href="/remove_from_cart.php?id=<?=$item['id'];?>">Удалить</a>
+          </div>
+          <?php endforeach;?>
+      <?php endif;?>
+

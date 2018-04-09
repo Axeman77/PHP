@@ -6,7 +6,7 @@
 </div>
 <img src="<?="/images/{$product['path']}"?>" alt="img">
 <div>
-    <a href="add_to_cart.php?id=<?=$product['id']?>">Add to cart</a>
+  <a href="add_to_cart.php?id=<?=$product['id']?>">Add to cart</a>
 </div>
 
 

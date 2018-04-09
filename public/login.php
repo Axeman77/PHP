@@ -9,9 +9,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
    $login = $_POST['login'];
    $pass = $_POST['password'];
    if($user = getUserByLoginPass($login, $pass)){
-       /*setcookie("login", "1");*/
        session_start();
-//       $_SESSION['login'] = true;
+       $_SESSION['user_id'] = $user['id'];
        header("Location: /lk.php");
        exit;
    }
