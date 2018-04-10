@@ -10,8 +10,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
-<div class="header"><a href="/catalog.php" class="link-header">Каталог</a>
-  <a href="/cart.php" class="link-header">Корзина</a>
+<div class="header">
+  <a href="/product/index" class="link-header">Каталог</a>
+  <a href="/cart/index" class="link-header">Корзина</a>
+  <a href="/comments/index" class="link-header">Отзыв</a>
+  <a href="/lk/index" class="link-header">Личный кабинет</a>
 </div>
 <div class="content"><?=$content?></div>
 <div class="footer">Все права защищены 2018&copy</div>
