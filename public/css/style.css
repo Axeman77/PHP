@@ -13,3 +13,17 @@
     outline: 2px solid #000;
     padding: 2px;
 }
+.quantity {
+    display: flex;
+}
+
+.quantity button {
+    width: 30px;
+}
+.cart-items {
+    display: flex;
+}
+.cart-item {
+    width: 33%;
+    padding: 10px;
+}
