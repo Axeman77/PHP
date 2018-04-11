@@ -1,6 +1,6 @@
 <?php
 $cart = [];
-if (!empty($_SESSION['cart'])) var_dump($_SESSION['cart']); {
+if (!empty($_SESSION['cart'])) {
     $productsIds = array_keys($_SESSION['cart']);
     $products = getProductByIds($productsIds);
     foreach ($products as $product) {

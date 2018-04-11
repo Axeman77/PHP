@@ -18,10 +18,10 @@
                 <button class="remove" data-id="<?= $item['id'] ?>">-</button>
               </div>
               <div>
-                <input type="text" name="quantity" value="1" size="2"/>
+                <input type="text" name="quantity" value="<?= $item['count'] ?>" size="2"/>
               </div>
               <div>
-                <button class="add" data-id="<?= $item['id']; var_dump($_POST); ?>">+</button>
+                <button class="add" data-id="<?= $item['id']; ?>">+</button>
               </div>
             </form>
             <a href="/cart/remove_from_cart?id=<?= $item['id']; ?>">Удалить</a>
@@ -37,7 +37,6 @@
                   url: "/cart/add_to_cart",
                   type: "POST",
                   data: {
-                      cart_add: true,
                       id: id
                   },
                   success: function (response) {
