@@ -1,5 +1,9 @@
 <div class=cart>
   <h1>Корзина товаров:</h1>
+    <form action="" method="post">
+    <input type="submit" name="order" value="Оформить заказ" style=" height:30px; padding: 0px 20px;" />
+  </form>
+    <?  /*var_dump($_SERVER); */ ?>
   <div class="cart-items">
       <?php if (empty($cart)): ?>
         <div>Корзина пуста!</div>
@@ -28,7 +32,8 @@
           </div>
           <?php endforeach; ?>
       <?php endif; ?>
-  </div>
+   </div>
+
   <script>
       $(function () {
           $(".add").on("click", function () {
@@ -38,14 +43,28 @@
                   type: "POST",
                   data: {
                       id: id
-                  },
-                  success: function (response) {
-                      response = JSON.parse(response);
-                      if (response.status == "ok") {
-                          alert("Товар добавлен в корзину");
-                      }
+                  }
+              });
+          });
+          $(".remove").on("click", function () {
+              var id = $(this).data('id');
+              $.ajax({
+                  url: "/cart/remove_from_cart",
+                  type: "POST",
+                  data: {
+                      id: id
+                  }
+              });
+          });
+          $("#send").on("click", function () {
+              $.ajax({
+                  url: "/cart/send_order",
+                  type: "POST",
+                  data: {
+                      id: id
                   }
               });
           });
       });
+
   </script>
